@@ -10,6 +10,12 @@
         <p th:fragment = "pedicureDescription">Relax for 45 minutes in pure luxury! Our massage chairs and experienced nail techs are here to get your feet in shape for sandal season!</p>
 </body>
 <footer th:fragment = "myFooter">
-    <div th:each="box : ${colors}"></div>
+    <div class="boxes">
+    <th:block th:each="box : ${colors}">
+        <div class="box" th:style="${'background-color: ' +  box + ';'}">
+            NAIL COLOR
+        </div>
+    </th:block>
+    </div>
 </footer>
 </html>

@@ -1,5 +1,7 @@
 package org.launchcode.spaday.models;
 
+import java.time.LocalDateTime;
+
 public class User {
     private static int nextId;
     private int id;
@@ -7,9 +9,12 @@ public class User {
     private String email;
     private String password;
 
+    private LocalDateTime date;
+
     public User() {
         this.id = nextId;
         nextId++;
+        this.date = LocalDateTime.now();
     }
 
     public User(String username, String email, String password) {
@@ -46,5 +51,9 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public LocalDateTime getDate() {
+        return date;
     }
 }
